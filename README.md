@@ -1,19 +1,19 @@
-# mockme
+# hoodwink
 
-[![build status](https://secure.travis-ci.org/dcousens/mockme.png)](http://travis-ci.org/dcousens/mockme)
-[![Version](http://img.shields.io/npm/v/mockme.svg)](https://www.npmjs.org/package/mockme)
+[![build status](https://secure.travis-ci.org/dcousens/hoodwink.png)](http://travis-ci.org/dcousens/hoodwink)
+[![Version](http://img.shields.io/npm/v/hoodwink.svg)](https://www.npmjs.org/package/hoodwink)
 
 A dead simple mock/stub module for Javascript
 
-**TODO**: `mockme/async`
+**TODO**: `hoodwink/async`
 
 ## Examples
 
 ``` javascript
 let tape = require('tape')
-let mockme = require('mockme')
+let hoodwink = require('hoodwink')
 
-tape('foo returns 0, then 1', mockme((t) => {
+tape('foo returns 0, then 1', hoodwink((t) => {
 	let stub = this.stub(function f () {
 		if (f.calls === 0) return 0
 		if (f.calls === 1) return 1
@@ -21,7 +21,7 @@ tape('foo returns 0, then 1', mockme((t) => {
 
 	t.equal(stub(), 0)
 	t.equal(stub(), 1)
-	// stub(), will throw, and explode on `mockme` finishing
+	// stub(), will throw, and explode on `hoodwink` finishing
 })
 ```
 

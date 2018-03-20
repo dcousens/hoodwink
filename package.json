@@ -1,5 +1,5 @@
 {
-  "name": "mockme",
+  "name": "hoodwink",
   "version": "1.0.0",
   "description": "A dead simple mock/stub module for Javascript",
   "main": "index.js",
@@ -13,14 +13,14 @@
     "stub",
     "testing"
   ],
-  "homepage": "https://github.com/dcousens/mockme",
+  "homepage": "https://github.com/dcousens/hoodwink",
   "bugs": {
-    "url": "https://github.com/dcousens/mockme/issues"
+    "url": "https://github.com/dcousens/hoodwink/issues"
   },
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcousens/mockme.git"
+    "url": "https://github.com/dcousens/hoodwink.git"
   },
   "author": "Daniel Cousens",
   "devDependencies": {
