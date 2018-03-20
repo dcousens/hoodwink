@@ -1,5 +1,5 @@
 var test = require('tape')
-var mockme = require('mockme')
+var hoodwink = require('../')
 
 test('', function (t) {
   t.end()

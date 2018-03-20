@@ -1,4 +1,4 @@
-module.exports = function mockme (f) {
+module.exports = function hoodwink (f) {
   var mocks = []
 
   function mock (constructor, functionName, func, n) {
