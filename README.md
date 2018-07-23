@@ -21,7 +21,7 @@ tape('foo returns 0, then 1', hoodwink((t) => {
 
 	t.equal(stub(), 0)
 	t.equal(stub(), 1)
-	// stub(), will throw, and explode on `hoodwink` finishing
+	// stub(), will throw when `hoodwink` returns
 })
 ```
 
