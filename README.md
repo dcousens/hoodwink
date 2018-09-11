@@ -25,4 +25,4 @@ tape('foo returns 0, then 1', hoodwink((t) => {
 })
 ```
 
-## License [ISC](LICENSE)
+## License [MIT](LICENSE)
