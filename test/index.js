@@ -7,7 +7,9 @@ tape('explodes on too few calls', function (t) {
       function f () {}
       const stub = this.stub(f, 3)
 
+      t.equal(f.calls, 0)
       stub()
+      t.equal(f.calls, 1)
     })()
   }, /Too few calls/)
 
@@ -21,7 +23,10 @@ tape('explodes on too many calls', function (t) {
 
     stub()
     stub()
+
+    t.equal(f.calls, 2)
     t.throws(() => stub())
+    t.equal(f.calls, 2) // doesn't increment when throwing
   }, /Too many calls/)()
 
   t.end()
