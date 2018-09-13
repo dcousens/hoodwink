@@ -12,15 +12,15 @@ A dead simple mock/stub module for Javascript
 const tape = require('tape')
 const hoodwink = require('hoodwink')
 
-tape('foo returns 0, then 1', hoodwink(function (t) {
-  const stub = this.stub(function f () {
-    if (f.calls === 0) return 0
-    if (f.calls === 1) return 1
+tape('stub returns 0, then 1', hoodwink(function (t) {
+  const foo = this.stub(function f () {
+    if (foo.calls === 0) return 0
+    if (foo.calls === 1) return 1
   }, 2)
 
-  t.equal(stub(), 0)
-  t.equal(stub(), 1)
-  // t.equal(stub(), ...) // would throw! (calls > 2)
+  t.equal(foo(), 0)
+  t.equal(foo(), 1)
+  // t.equal(foo(), ...) // XXX: throws! (as foo.calls would be > 2)
 })
 ```
 **Pro**tip: use `function (...) {}`, not `() => {}`, to prevent `this` binding issues
