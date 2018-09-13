@@ -1,39 +1,39 @@
 module.exports = function hoodwink (f) {
-  let mocks = []
+  const mocks = []
 
   function mock (constructor, functionName, func, n) {
     n = n || Infinity
 
-    let initial = constructor[functionName]
-    let context = constructor.constructor.name !== 'Function' ? constructor : null
+    const initial = constructor[functionName]
+    const context = constructor.constructor.name !== 'Function' ? constructor : null
     function __mock () {
-      if (func.calls >= n) throw new RangeError('Too many calls')
-      let r = func.apply(context, arguments)
-      ++func.calls
+      if (__mock.calls >= n) throw new RangeError('Too many calls')
+      const r = func.apply(context, arguments)
+      ++__mock.calls
       return r
     }
-    func.calls = 0
-    func.expected = n
-    func.reset = function reset () {
+    __mock.calls = 0
+    __mock.expected = n
+    __mock.reset = function reset () {
       constructor[functionName] = initial
     }
     constructor[functionName] = __mock
-    mocks.push(func)
+    mocks.push(__mock)
   }
 
   function stub (func, n) {
     n = n || Infinity
 
     function __stub () {
-      if (func.calls >= n) throw new RangeError('Too many calls')
-      let r = func.apply(null, arguments)
-      ++func.calls
+      if (__stub.calls >= n) throw new RangeError('Too many calls')
+      const r = func.apply(null, arguments)
+      ++__stub.calls
       return r
     }
-    func.calls = 0
-    func.expected = n
+    __stub.calls = 0
+    __stub.expected = n
 
-    mocks.push(func)
+    mocks.push(__stub)
     return __stub
   }
 
