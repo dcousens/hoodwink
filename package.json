@@ -1,6 +1,6 @@
 {
   "name": "hoodwink",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A dead simple mock/stub module for Javascript",
   "main": "index.js",
   "scripts": {
