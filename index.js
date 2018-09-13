@@ -1,14 +1,14 @@
 module.exports = function hoodwink (f) {
-  var mocks = []
+  let mocks = []
 
   function mock (constructor, functionName, func, n) {
     n = n || Infinity
 
-    var initial = constructor[functionName]
-    var context = constructor.constructor.name !== 'Function' ? constructor : null
+    let initial = constructor[functionName]
+    let context = constructor.constructor.name !== 'Function' ? constructor : null
     function __mock () {
       if (func.calls >= n) throw new RangeError('Too many calls')
-      var r = func.apply(context, arguments)
+      let r = func.apply(context, arguments)
       ++func.calls
       return r
     }
@@ -26,7 +26,7 @@ module.exports = function hoodwink (f) {
 
     function __stub () {
       if (func.calls >= n) throw new RangeError('Too many calls')
-      var r = func.apply(null, arguments)
+      let r = func.apply(null, arguments)
       ++func.calls
       return r
     }
@@ -38,7 +38,7 @@ module.exports = function hoodwink (f) {
   }
 
   return function run () {
-    var err
+    let err
     try {
       f.apply({
         mock: mock,
